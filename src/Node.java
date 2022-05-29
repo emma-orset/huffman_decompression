@@ -60,6 +60,26 @@ public class Node {
 
     @Override
     public String toString(){
-        return this.getFreq() + " " + this.getLabel() + " " + this.getLeftChild() + " " + this.getRightChild() + "\n";
+        String freq ="";
+        String label="";
+        String leftChild="";
+        String rightChild="";
+
+        if (this.getFreq() != null){
+            freq = String.valueOf(this.getFreq());
+        }
+
+        if (this.getLabel() != null){
+            label = String.valueOf(this.getLabel());
+        }
+
+        if (this.getLeftChild() != null){
+            leftChild = String.valueOf(this.getLeftChild());
+        }
+
+        if (this.getRightChild() != null){
+            rightChild = String.valueOf(this.getRightChild());
+        }
+        return freq + " " + label + " " + leftChild + " " + rightChild + "\n";
     }
 }
