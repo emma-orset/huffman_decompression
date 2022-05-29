@@ -4,6 +4,14 @@ import java.util.HashMap;
 public class Dictionnary {
     private String nameFile;
 
+    public String getNameFile() {
+        return nameFile;
+    }
+
+    public void setNameFile(String nameFile) {
+        this.nameFile = nameFile;
+    }
+
     public Dictionnary(String nameFile) {
         this.nameFile = nameFile;
     }
@@ -28,7 +36,15 @@ public class Dictionnary {
 
                 //Parcourir le dictionnaire
                 if (numLine > 2 && numLine <= lenghtDict + 2){
-                    dict.put(line.charAt(0), Character.getNumericValue(line.charAt(2)));
+                    String freq="";
+
+                    //Pour un grand texte, la fréquence du cacatère peut être >9
+                    for(int i=2; i<line.length();i++) {
+                        freq = freq + line.charAt(i);
+                    }
+
+                    //La clé du HM est le caractère et la valeur associée est la fréquence associée
+                    dict.put(line.charAt(0), Integer.parseInt(freq));
                 }
                 numLine++;
 

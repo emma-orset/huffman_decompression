@@ -5,5 +5,8 @@ public class MainTest {
         String dictFile = "Resources/textFreq.txt";
         Dictionnary dict = new Dictionnary(dictFile);
         System.out.println(Arrays.asList(dict.readDict()));
+
+        Tree tree = new Tree(dictFile);
+        System.out.println(tree.getRoot());
     }
 }
