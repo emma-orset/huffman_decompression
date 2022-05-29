@@ -2,7 +2,7 @@ import java.util.Comparator;
 
 public class Node {
     private Integer freq;
-    private Character label;
+    private String label;
     private Node leftChild;
     private Node rightChild;
 
@@ -14,11 +14,11 @@ public class Node {
         this.freq = freq;
     }
 
-    public Character getLabel() {
+    public String getLabel() {
         return label;
     }
 
-    public void setLabel(Character label) {
+    public void setLabel(String label) {
         this.label = label;
     }
 
@@ -44,7 +44,7 @@ public class Node {
 
 
 
-    public Node(Integer freq, Character label){
+    public Node(Integer freq, String label){
         this.freq = freq;
         this.label = label;
     }
@@ -62,24 +62,15 @@ public class Node {
     public String toString(){
         String freq ="";
         String label="";
-        String leftChild="";
-        String rightChild="";
 
         if (this.getFreq() != null){
             freq = String.valueOf(this.getFreq());
         }
 
         if (this.getLabel() != null){
-            label = String.valueOf(this.getLabel());
+            label = this.getLabel();
         }
 
-        if (this.getLeftChild() != null){
-            leftChild = String.valueOf(this.getLeftChild());
-        }
-
-        if (this.getRightChild() != null){
-            rightChild = String.valueOf(this.getRightChild());
-        }
-        return freq + " " + label + " " + leftChild + " " + rightChild + "\n";
+        return freq + " " + label + " " + this.getLeftChild() + " " + this.getRightChild() + "\n";
     }
 }

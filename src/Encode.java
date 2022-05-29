@@ -1,12 +1,12 @@
 import java.util.HashMap;
 
 public class Encode {
-    private HashMap<Character, String> encode = new HashMap<Character, String>();
+    private HashMap<String, String> encode = new HashMap<String, String>();
 
     public Encode() {
     }
 
-    public HashMap<Character, String> dictEncode(Node node, String code) {
+    public HashMap<String, String> dictEncode(Node node, String code) {
         if(node == null){
             return null;
         }

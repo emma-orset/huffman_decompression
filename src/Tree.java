@@ -29,7 +29,7 @@ public class Tree {
 
         //Création de toutes les nodes
         //Le label est la clé du HM et la fréquence est le nombre associé
-        for (Character c : dictHM.readDict().keySet()) {
+        for (String c : dictHM.readDict().keySet()) {
             listNode.add(new Node(dictHM.readDict().get(c), c));
         }
 
