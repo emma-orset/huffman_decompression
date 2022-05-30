@@ -40,6 +40,25 @@ public class Main {
                 e.printStackTrace();
             }
 
+            File openBinFile =new File(path + "_comp.bin");
+            File openFile =new File(path + ".txt");
+
+            if(openBinFile.exists() && openFile.exists()){
+                //Détermination du taux de compression (en octets)
+                double bytesB = openBinFile.length();
+                double bytes = openFile.length();
+
+                double amount = 1 - bytesB/bytes;
+
+                System.out.println("* * * * * "+file+" * * * * *");
+                System.out.println("bytes file "+ path + ".txt : " + bytes+ " octets");
+                System.out.println("bytes binary file " + path + "_comp.bin : " + bytesB+ " octets");
+                System.out.println("The amount for these files is : " + amount + "\n\n");
+
+            }else{
+                System.out.println("Files not find");
+            }
+
         }
 
     }
